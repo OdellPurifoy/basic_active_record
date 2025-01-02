@@ -24,6 +24,7 @@ module BasicActiveRecord
     def self.relation_delegate_cache = @relation_delegate_cache
     def self.where(conditions) = current_scope.scope.where(conditions)
     def self.order(ordering) = current_scope.scope.order(ordering)
+    def self.where_not(conditions) = current_scope.scope.where_not(conditions)
 
     def self.count
       sql = current_scope.scope.to_sql

@@ -15,6 +15,7 @@ SQL
 BasicActiveRecord::DatabaseConnection.instance.execute("INSERT INTO users (name, organization, active, created_at) VALUES ('John Doe', 'Acme', 1, '2018-01-01')")
 BasicActiveRecord::DatabaseConnection.instance.execute("INSERT INTO users (name, organization, active, created_at) VALUES ('Jane Doe', 'Acme', 1, '2018-01-01')")
 BasicActiveRecord::DatabaseConnection.instance.execute("INSERT INTO users (name, organization, active, created_at) VALUES ('John Smith', 'Acme', 0, '2018-01-01')")
+BasicActiveRecord::DatabaseConnection.instance.execute("INSERT INTO users (name, organization, active, created_at) VALUES ('Jane Smith', 'Foo', 1, '2018-01-01')")
 
 class User < BasicActiveRecord::Base
   def self.active
@@ -26,5 +27,5 @@ class User < BasicActiveRecord::Base
   end
 end
 
-puts User.where(organization: 'Acme').active.recent.count
+puts User.where_not(organization: 'Acme').to_a
 puts User.active.where(organization: 'Acme').recent.to_a
