@@ -15,3 +15,12 @@ To run the code locally, follow these steps:
    ```bash
    git clone https://github.com/OdellPurifoy/basic_activerecord.git
    cd basic_activerecord
+2. **Bundle**:
+   ```bash
+   bundle install
+3. **Executable**:
+   ```bash
+   chmod +x bin/basic_activerecord.rb
+4. **Run the script**:
+   ```
+   ./bin/basic_activerecord.rb
